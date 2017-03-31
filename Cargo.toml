@@ -1,0 +1,10 @@
+[package]
+name = "tetanus"
+version = "0.1.0"
+authors = ["Jason Ross <algorythm@gmail.com>"]
+
+[dependencies]
+local-ip = "0.1.0"
+rand = "0.3.15"
+rust-crypto = "0.2.36"
+clap = {version = "2.22.2", features = ["yaml"]}
