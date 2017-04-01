@@ -4,18 +4,16 @@ A simple cryptolocker tool written in Rust
 
 ## Features
 
-#### Lockjaw
-Client Module
-
-* AES-256 encryption of files
-* Only triggers after receiving the encryption key from c2 server
-
-#### Nail
-Command Module
+#### Nail -- Command Module
 
 * Creates randomly generated key unique to each client
 * Maintains list of victims with their keys
 * Communicates the key to the client via a control channel using a custom protocol
+
+#### Lockjaw -- Client Module
+
+* AES-256 encryption of files
+* Only triggers after receiving the encryption key from c2 server
 
 ## Compiling
 
