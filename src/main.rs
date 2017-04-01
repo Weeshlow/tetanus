@@ -16,7 +16,7 @@ extern crate clap;
 use clap::App;
 
 fn main() {
-    let mut lockjaw = "true";   // run as victim
+    let mut lockjaw = "true";   // run as client
     let mut nail = "false";     // not as c2
 
     let yaml = load_yaml!("cli.yml");
@@ -24,7 +24,7 @@ fn main() {
 
     if let Some(matches) = matches.subcommand_matches("nail") {
         nail = "true";      // run as c2
-        lockjaw = "false";  // not as victim
+        lockjaw = "false";  // not as client
     }
 
     if DBUG == 1 {

