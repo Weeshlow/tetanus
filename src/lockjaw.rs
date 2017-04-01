@@ -1,4 +1,4 @@
-// lockjaw is the victim module for the tetanus cryptolocker malware
+// lockjaw is the victim module for the tetanus cryptolocker tool
 const DBUG: i32 = 1;
 
 extern crate std;

