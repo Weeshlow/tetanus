@@ -10,6 +10,8 @@ use std::io;
 use std::env;
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
+use std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
+
 
 pub fn init(c2: std::string::String) {
     if DBUG == 1 {
@@ -21,5 +23,6 @@ pub fn init(c2: std::string::String) {
 
 pub fn get_ip() -> std::net::IpAddr  {
 // returns the local ip address of the host
-    local_ip::get().unwrap()
+    let default = IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1));
+    local_ip::get().unwrap_or(default)
 }

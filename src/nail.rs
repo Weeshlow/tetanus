@@ -7,6 +7,7 @@ extern crate local_ip;
 use std::io;
 use std::env;
 use std::net::{TcpListener, TcpStream};
+use std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
 
 pub fn init() {
     if DBUG == 1 {
@@ -43,7 +44,8 @@ pub fn init() {
 
 fn get_ip() -> std::net::IpAddr  {
 // returns the local ip address of the host
-    local_ip::get().unwrap()
+    let default = IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1));
+    local_ip::get().unwrap_or(default)
 }
 
 fn handle_client(stream: TcpStream) {
