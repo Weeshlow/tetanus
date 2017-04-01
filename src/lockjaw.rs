@@ -20,5 +20,6 @@ pub fn init(c2: std::string::String) {
 }
 
 pub fn get_ip() -> std::net::IpAddr  {
+// returns the local ip address of the host
     local_ip::get().unwrap()
 }
