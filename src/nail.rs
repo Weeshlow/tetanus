@@ -20,10 +20,32 @@ pub fn init() {
     addr_string.push_str(&c2_addr);                 // push the ip address to the string
     addr_string.push_str(&c2_port);                 // push the port to the string
 
-    let c2_lsnr = TcpListener::bind(&*addr_string); // bind the c2 listner address
+    // bind the c2 listner address
+    let c2_lsnr = TcpListener::bind(&*addr_string).unwrap();
+    if DBUG == 1 {
+        println!("c2 server bound to: {}", addr_string);
+    }
+
+    // manage the streams
+    for stream in c2_lsnr.incoming() {
+        match stream {
+            Ok(stream) => {
+                // pass the stream to the client handler
+                handle_client(stream);
+            }
+            Err(e) => {
+                // connection failed
+                println!("Connection failed! {}", e);
+            }
+        }
+    }
 }
 
-pub fn get_ip() -> std::net::IpAddr  {
+fn get_ip() -> std::net::IpAddr  {
 // returns the local ip address of the host
     local_ip::get().unwrap()
+}
+
+fn handle_client(stream: TcpStream) {
+    println!("client connected!");
 }
